@@ -297,16 +297,21 @@ img{
 /* Responsive styles for tablets/mobile */
 @media(max-width: 768px) {
     header {
-        padding: 20px;
+        padding: 10px;
         flex-direction: column;
     }
-
+.hero{
+    margin-top:5rem;
+    padding:2rem;
+}
     .hero h1 {
         font-size: 32px;
     }
-        header.hide {
-    top: -60px;
+    header.hide {
+    top: -80px;
+      z-index: 5000; /* Keep header above other elements */
 }
+
 }
 
 /* ===== FORM SECTIONS ===== */
