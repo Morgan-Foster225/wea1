@@ -1,0 +1,250 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100..900&family=Tinos:wght@400;700&display=swap');
+
+/* ========================
+   ROOT VARIABLES
+======================== */
+:root {
+    --primary: #D4B06A;          /* Main gold color */
+    --accent: #C7A892;           /* Secondary accent color */
+    --bg: #FDF9F2;               /* Page background color */
+    --surface: #FFFFFF;          /* Card/surface background */
+    --text: #4A4038;             /* Main text color */
+    --muted: #8A7A6C;            /* Muted/secondary text */
+    --border: #EFE4D3;           /* Border/light divider color */
+    --hero-gradient-1: #EFE4D3;  /* Hero gradient start */
+    --hero-gradient-2: #D4B06A;  /* Hero gradient end */
+}
+
+/* ========================
+   GLOBAL RESET
+======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Makes width/height include padding and border */
+}
+
+/* Body styling */
+body {
+    font-family: 'Tinos', serif; /* Main body font */
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--bg);
+}
+
+/* ========================
+   HEADER
+======================== */
+header {
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center;
+    position: fixed; /* Stays at top on scroll */
+    top: 0;
+    background: var(--border);
+    z-index: 1000; /* Ensures header is above other elements */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: top 0.3s ease; /* Smooth hide/show effect */
+}
+
+/* Header hidden (added via JS) */
+header.hide {
+    top: -120px;
+}
+
+/* Header logo image */
+header img {
+    max-width: 230px;
+    height: auto;
+}
+
+/* Logo text styling */
+.logo {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 15px;
+    color: var(--primary);
+}
+
+/* ========================
+   NAVIGATION
+======================== */
+nav a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    padding: 10px;
+    font-size: larger;
+    font-family: 'Raleway', sans-serif; /* Nav font */
+}
+
+/* Hover effect for nav links */
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ========================
+   IMAGES
+======================== */
+img {
+    display: block;
+    margin: auto; /* Center images */
+    width: 50%;   /* Default image width */
+}
+
+/* ========================
+   HERO / MAIN
+======================== */
+.main {
+    margin:0;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--hero-gradient-1), var(--hero-gradient-2));
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    color:var(--text);
+    padding: 0 20px;
+}
+
+/* Hero heading */
+.main h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+/* ========================
+   SECTIONS GRID
+======================== */
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible columns */
+    gap: 40px; /* Space between cards */
+    max-width: 1200px;
+    margin: 80px auto; /* Center grid with spacing */
+    padding: 0 20px;
+}
+
+/* Apply individual section styles inside the grid */
+.sections-grid .donate,
+.sections-grid .joinUs,
+.sections-grid .partner {
+    margin: 0; /* Grid handles spacing */
+} 
+
+/* ========================
+   UNIFIED VOLUNTEER STYLE (CARD STYLE)
+======================== */
+.donate,
+.joinUs,
+.partner {
+    background: var(--surface);
+    padding: 30px;
+    margin:8rem;
+    border-left: 8px solid var(--primary); /* Left accent border */
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for all cards */
+.donate:hover,
+.joinUs:hover,
+.partner:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent); /* Slight accent on hover */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Section headings inside cards */
+.sections-grid h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 18px;
+}
+
+/* Paragraph text inside cards */
+.sections-grid p {
+    font-family: 'Tinos', serif;
+    font-size: 25px;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* ========================
+   MISSION SECTION
+======================== */
+.mission {
+    padding: 80px 20px;
+    text-align: center;
+    color: var(--accent);
+    background: var(--bg);
+}
+
+/* ========================
+   TYPOGRAPHY
+======================== */
+h1, h2 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+h3 {
+    color: var(--muted);
+    margin-bottom: 12px;
+    font-family: 'Raleway', sans-serif;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Unordered list */
+ul {
+    padding-left: 20px;
+}
+
+/* List items spacing */
+li {
+    margin-bottom: 10px;
+    font-size: larger;
+    color: var(--muted);
+}
+
+/* ========================
+   FOOTER
+======================== */
+.footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 768px) {
+    .sections-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+        gap: 30px;
+        padding: 0 15px;
+    }
+
+    .donate,
+    .joinUs,
+    .partner {
+        padding: 30px 20px;
+    }
+
+    .main h1 {
+        font-size: 36px;
+    }
+}

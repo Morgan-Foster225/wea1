@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Tinos:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COLOR SYSTEM */
+:root {
+    --primary: #D4B06A;
+    --accent: #C7A892;
+    --bg: #FDF9F2;
+    --surface: #FFFFFF;
+    --text: #4A4038;
+    --muted: #8A7A6C;
+    --border: #EFE4D3;
+}
+
+/* BASE */
+body {
+    font-family: "Tinos", serif;
+    color: var(--text);
+    background: var(--border);
+    line-height: 1.7;
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: var(--bg);
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: top 0.3s ease;
+}
+
+.header.hide {
+    top: -100px;
+}
+
+header img {
+    max-width: 230px;
+    height: auto;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 20px;
+    margin: 0 15px;
+    color: var(--primary);
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px;
+    font-size: larger;
+}
+
+nav a:hover {
+    color: #B1947C;
+}
+
+/* TYPOGRAPHY */
+h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 20px;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+strong {
+    color: var(--primary);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.hero .lead {
+    font-size: 22px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* SECTIONS */
+section {
+    padding: 90px 10%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section:first-of-type {
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 60px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+section.impact {
+    background: var(--bg);
+    padding: 100px 0;
+    max-width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+section.impact h2 {
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+section.impact .stat {
+    font-size: 56px;
+    margin-bottom: 25px;
+}
+
+section.impact ul {
+    max-width: 600px;
+    margin: auto;
+}
+
+section.impact li {
+    font-size: 28px;
+    padding: 6px 0;
+}
+/* LISTS */
+li {
+    font-size: 20px;
+    list-style: none;
+    margin-bottom: 0.5em;
+}
+
+/* LAYOUT */
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin: auto;
+}
+
+/* CARDS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--surface);
+    padding: 45px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+.stat {
+    font-family: "Raleway", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    background: white;
+    border: 1px solid var(--bg);
+    border-radius: 12px;
+    padding: 70px 40px;
+    margin-bottom: 80px;
+}
+
+.cta h2 {
+    color: var(--text);
+}
+
+.cta button {
+    margin-top: 25px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.cta button:hover {
+    background: #b08b47;
+}
+.btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-main {
+    background: var(--surface);
+    color: var(--primary);
+    font-weight: 600;
+    font-size:x-large;
+    text-decoration:none;
+}
+
+.btn-main:hover {
+    background: var(--border);
+}
+/* FOOTER */
+.footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
