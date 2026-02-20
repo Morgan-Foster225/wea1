@@ -304,6 +304,9 @@ img{
     .hero h1 {
         font-size: 32px;
     }
+        header.hide {
+    top: -80px;
+}
 }
 
 /* ===== FORM SECTIONS ===== */
