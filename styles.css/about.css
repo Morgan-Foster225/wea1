@@ -250,8 +250,21 @@ li {
 }
 
 /* RESPONSIVE */
-@media(max-width: 900px) {
-    .two-column {
-        grid-template-columns: 1fr;
+@media(max-width: 768px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
     }
+.hero{
+    margin-top:5rem;
+    padding:2rem;
+}
+    .hero h1 {
+        font-size: 32px;
+    }
+    header.hide {
+    top: -80px;
+      z-index: 5000; /* Keep header above other elements */
+}
+
 }
