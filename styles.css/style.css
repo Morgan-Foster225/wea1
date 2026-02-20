@@ -32,7 +32,7 @@ body {
 /* Header (navigation bar) */
 header {
     width: 100%;
-    padding: 20px 60px;
+    padding: 0px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
